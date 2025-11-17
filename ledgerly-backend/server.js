@@ -12,7 +12,8 @@ const app = express();
 const allowedOrigins = [
   process.env.FRONTEND_URL,         // Vercel frontend
   "http://localhost:3000",          // Local dev
-  "http://127.0.0.1:3000"           // Local dev alternative
+  "http://127.0.0.1:3000",
+  "ledgerly-capstone-hjwz.vercel.app"          // Local dev alternative
 ];
 
 // Middleware
