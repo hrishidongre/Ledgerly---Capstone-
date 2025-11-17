@@ -1,6 +1,6 @@
-# 📘 Ledgerly – Personal Budget and Expense Planner
+# 📘 BudgetEase – Personal Budget and Expense Planner
 
-Ledgerly helps users track their expenses, plan budgets, and understand their financial habits with clear visual insights.  
+BudgetEase helps users track their expenses, plan budgets, and understand their financial habits with clear visual insights.  
 It offers an intuitive interface, secure authentication, and useful analytics to simplify personal finance management.
 
 ---
@@ -9,7 +9,7 @@ It offers an intuitive interface, secure authentication, and useful analytics to
 
 Manually tracking expenses often becomes confusing and time-consuming. People struggle to understand where their money goes, how to maintain budgets, and how to monitor their financial health.
 
-**Ledgerly** solves this by allowing users to:
+**BudgetEase** solves this by allowing users to:
 - Record and categorize expenses  
 - Visualize spending patterns  
 - Create and manage budgets  
