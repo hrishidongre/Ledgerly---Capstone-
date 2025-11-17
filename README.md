@@ -1,36 +1,116 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# 📘 Ledgerly – Personal Budget and Expense Planner
 
-## Getting Started
+Ledgerly helps users track their expenses, plan budgets, and understand their financial habits with clear visual insights.  
+It offers an intuitive interface, secure authentication, and useful analytics to simplify personal finance management.
 
-First, run the development server:
+---
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+## 🚨 Problem Statement
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Manually tracking expenses often becomes confusing and time-consuming. People struggle to understand where their money goes, how to maintain budgets, and how to monitor their financial health.
 
-You can start editing the page by modifying `app/page.js`. The page auto-updates as you edit the file.
+**Ledgerly** solves this by allowing users to:
+- Record and categorize expenses  
+- Visualize spending patterns  
+- Create and manage budgets  
+- Get monthly insights and financial breakdowns  
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+---
 
-## Learn More
+## 🏗️ System Architecture
 
-To learn more about Next.js, take a look at the following resources:
+**Architecture Flow:**  
+**Frontend (Next.js + React)** → **Backend API (Node.js + Express)** → **Database (MySQL)**
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+### 🔧 Tech Stack
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+#### **Frontend**
+- Next.js  
+- React  
+- TailwindCSS  
 
-## Deploy on Vercel
+#### **Backend**
+- Node.js  
+- Express.js  
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+#### **Database**
+- MySQL  
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+#### **Authentication**
+- JWT-based login/signup  
+
+#### **Hosting**
+- Frontend → Vercel  
+- Backend → Render / Railway  
+- Database → Aiven  
+
+---
+
+## ✨ Key Features
+
+### 🔐 Authentication & Authorization
+- User registration  
+- Login & logout  
+- JWT-based session management  
+
+### 📦 CRUD Operations
+- Add, view, edit, delete expenses  
+- Create and manage budgets  
+
+### 🧭 Frontend Routing
+- Home  
+- Login  
+- Signup  
+- Dashboard  
+- Add Expense  
+- Budget Overview  
+
+### 🗂️ Expense Categorization
+- Categories like Food, Transport, Utilities, etc.
+
+### ⚙️ Data Operations
+- Search  
+- Filter  
+- Sorting (by date, category, amount)  
+- Pagination  
+
+### 📊 Analytics & Visualization
+- Monthly spending summaries  
+- Charts showing category-wise breakdown  
+- Budget vs. actual spending insights  
+
+### ☁️ Hosting
+- Fully deployed backend & frontend  
+- Accessible production URLs  
+
+---
+
+## 📑 Tech Stack Overview
+
+| Layer | Technologies |
+|-------|-------------|
+| **Frontend** | Next.js, React, TailwindCSS, Axios |
+| **Backend** | Node.js, Express.js |
+| **Database** | MySQL |
+| **Authentication** | JWT-based login/signup |
+| **Hosting** | Vercel (Frontend), Render/Railway (Backend), MySQL on Aiven |
+
+---
+
+## 🧪 API Overview
+
+| Endpoint | Method | Description | Access |
+|----------|--------|-------------|--------|
+| `/api/auth/signup` | POST | Register a new user | Public |
+| `/api/auth/login` | POST | Authenticate user and issue JWT | Public |
+| `/api/expenses` | GET | Get all expenses for user | Authenticated |
+| `/api/expenses` | POST | Add a new expense | Authenticated |
+| `/api/expenses/:id` | PUT | Update expense by ID | Authenticated |
+| `/api/expenses/:id` | DELETE | Delete expense by ID | Authenticated |
+| `/api/budgets` | GET | Get user budget overview | Authenticated |
+| `/api/budgets` | POST | Create/update budget | Authenticated |
+
+---
+
+## Backend Server hosted Link -  https://ledgerly-capstone.onrender.com
+## Frontend Server hosted Link - https://ledgerly-capstone.vercel.app/
