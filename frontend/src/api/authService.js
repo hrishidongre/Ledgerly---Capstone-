@@ -1,6 +1,6 @@
 import axios from 'axios';
 
-const API_URL = process.env.NEXT_PUBLIC_API_URL + "/api" || 'http://localhost:5050/api';
+const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:5050/api';
 
 // Create axios instance with default config
 const apiClient = axios.create({
@@ -13,7 +13,7 @@ export const authService = {
   // SIGNUP
   async signup(fullName, email, password) {
     try {
-      const response = await apiClient.post('/auth/signup', {
+      const response = await apiClient.post('/api/auth/signup', {
         fullName,
         email,
         password
@@ -27,7 +27,7 @@ export const authService = {
   // LOGIN
   async login(email, password) {
     try {
-      const response = await apiClient.post('/auth/login', {
+      const response = await apiClient.post('/api/auth/login', {
         email,
         password
       });
@@ -40,7 +40,7 @@ export const authService = {
   // LOGOUT
   async logout() {
     try {
-      const response = await apiClient.post('/auth/logout');
+      const response = await apiClient.post('/api/auth/logout');
       return response.data;
     } catch (error) {
       throw new Error(error.response?.data?.message || 'Logout failed');
@@ -50,7 +50,7 @@ export const authService = {
   // VERIFY TOKEN (Checks session)
   async verifyToken() {
     try {
-      const response = await apiClient.get('/auth/verify');
+      const response = await apiClient.get('/api/auth/verify');
       return response.data;
     } catch {
       return null; // user is not logged in
@@ -60,7 +60,7 @@ export const authService = {
   // GET CURRENT USER
   async getMe() {
     try {
-      const response = await apiClient.get('/auth/me');
+      const response = await apiClient.get('/api/auth/me');
       return response.data;
     } catch {
       return null; // user is not logged in
