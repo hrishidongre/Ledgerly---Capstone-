@@ -1,9 +1,8 @@
 import express from "express";
-import { PrismaClient } from "@prisma/client";
+import prisma from "../utils/prisma.js";
 import { verifyToken } from "../middleware/auth.js";
 
 const router = express.Router();
-const prisma = new PrismaClient();
 
 // Get all transactions (combined budgets + expenses) with filtering, sorting, and pagination
 router.get("/get", verifyToken, async (req, res) => {

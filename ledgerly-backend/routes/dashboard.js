@@ -1,8 +1,7 @@
 import express from "express";
-import { PrismaClient } from "@prisma/client";
+import prisma from "../utils/prisma.js";
 
 const router = express.Router();
-const prisma = new PrismaClient();
 
 // Get dashboard data for authenticated user
 router.get("/", async (req, res) => {
